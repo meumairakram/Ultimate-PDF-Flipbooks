@@ -1,0 +1,20 @@
+#reader-container {
+  background: #333;
+}
+#reader-container .content .pages .overlayer .page .overlay.pin {
+  background: #1a1a1a;
+}
+#reader-container .content .pages .overlayer .page .overlay.open {
+  background: #1a1a1a;
+}
+#reader-container .ctrl.btn {
+  background: #1a1a1a;
+  color: #fff;
+}
+#reader-container .ctrl.btn .icon {
+  color: #fff;
+}
+#reader-container .ctrl.btn:active,
+#reader-container .ctrl.btn.pressed {
+  background: #333;
+}

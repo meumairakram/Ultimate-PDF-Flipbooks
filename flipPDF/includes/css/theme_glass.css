@@ -1,0 +1,38 @@
+/*
+    Glass Theme
+*/
+#reader-container .content .pages .overlayer .page .overlay.pin {
+  background: rgba(255, 255, 255, 0.2);
+  border: 2px solid rgba(255, 255, 255, 0.5);
+}
+#reader-container .content .pages .overlayer .page .overlay.pin .icon {
+  color: #000;
+  width: 28px;
+  height: 28px;
+  line-height: 28px;
+}
+#reader-container .content .pages .overlayer .page .overlay.open {
+  background: rgba(255, 255, 255, 0.5);
+  border: 2px solid rgba(255, 255, 255, 0.75);
+}
+#reader-container .content .pages .overlayer .page .overlay.open .icon {
+  color: #000;
+}
+#reader-container .content .pages .overlayer .page .overlay.gallery .content .icon,
+#reader-container .content .pages .overlayer .page .overlay.video .content .icon {
+  color: #fff;
+}
+#reader-container .ctrl.btn {
+  background: rgba(255, 255, 255, 0.2);
+  border: 2px solid rgba(255, 255, 255, 0.5);
+}
+#reader-container .ctrl.btn:active,
+#reader-container .ctrl.btn.pressed {
+  background: rgba(255, 255, 255, 0.5);
+  border: 2px solid rgba(255, 255, 255, 0.75);
+}
+#reader-container .ctrl.btn:focus {
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}

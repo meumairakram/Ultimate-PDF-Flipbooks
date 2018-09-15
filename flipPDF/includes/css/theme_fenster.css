@@ -1,0 +1,352 @@
+/*
+Classic Windows Theme    
+*/
+#reader-container {
+  background: #008080;
+  font: 11px sans-serif;
+}
+#reader-container .content .pages .overlayer .page .overlay {
+  -moz-transition: width 300ms linear, height 300ms linear, top 300ms linear, left 300ms linear;
+  -o-transition: width 300ms linear, height 300ms linear, top 300ms linear, left 300ms linear;
+  -webkit-transition: width 300ms linear, height 300ms linear, top 300ms linear, left 300ms linear;
+  transition: width 300ms linear, height 300ms linear, top 300ms linear, left 300ms linear;
+}
+#reader-container .content .pages .overlayer .page .overlay.pin {
+  background: #c0c0c0;
+  -moz-border-radius: 0;
+  -webkit-border-radius: 0;
+  border-radius: 0;
+  border-top: 1px solid #ffffff;
+  border-left: 1px solid #ffffff;
+  border-bottom: 1px solid #000000;
+  border-right: 1px solid #000000;
+  -moz-box-shadow: inset #808080 -1px -1px 0px 1px;
+  -webkit-box-shadow: inset #808080 -1px -1px 0px 1px;
+  box-shadow: inset #808080 -1px -1px 0px 1px;
+}
+#reader-container .content .pages .overlayer .page .overlay.pin:not(.open):active,
+#reader-container .content .pages .overlayer .page .overlay.pin:not(.open).pressed {
+  -moz-border-radius: 0;
+  -webkit-border-radius: 0;
+  border-radius: 0;
+  border-top: 2px solid #000000;
+  border-left: 1px solid #000000;
+  border-bottom: 1px solid #ffffff;
+  border-right: 1px solid #ffffff;
+  -moz-box-shadow: inset #808080 1px 1px 0px 1px;
+  -webkit-box-shadow: inset #808080 1px 1px 0px 1px;
+  box-shadow: inset #808080 1px 1px 0px 1px;
+  background: #c0c0c0;
+}
+#reader-container .content .pages .overlayer .page .overlay.pin.open:active,
+#reader-container .content .pages .overlayer .page .overlay.pin.open.pressed {
+  background: #c0c0c0;
+  -moz-border-radius: 0;
+  -webkit-border-radius: 0;
+  border-radius: 0;
+  border-top: 1px solid #ffffff;
+  border-left: 1px solid #ffffff;
+  border-bottom: 1px solid #000000;
+  border-right: 1px solid #000000;
+  -moz-box-shadow: inset #808080 -1px -1px 0px 1px;
+  -webkit-box-shadow: inset #808080 -1px -1px 0px 1px;
+  box-shadow: inset #808080 -1px -1px 0px 1px;
+}
+#reader-container .content .pages .overlayer .page .overlay.pin .icon {
+  color: #000;
+}
+#reader-container .content .pages .overlayer .page .overlay:not(.open) .dimmer {
+  opacity: 0 !important;
+}
+#reader-container .content .pages .overlayer .page .overlay.open {
+  background: #c0c0c0;
+  -moz-border-radius: 0;
+  -webkit-border-radius: 0;
+  border-radius: 0;
+  border-top: 1px solid #ffffff;
+  border-left: 1px solid #ffffff;
+  border-bottom: 1px solid #000000;
+  border-right: 1px solid #000000;
+  -moz-box-shadow: inset #808080 -1px -1px 0px 1px;
+  -webkit-box-shadow: inset #808080 -1px -1px 0px 1px;
+  box-shadow: inset #808080 -1px -1px 0px 1px;
+}
+#reader-container .content .pages .overlayer .page .overlay.open:active,
+#reader-container .content .pages .overlayer .page .overlay.open.pressed {
+  background: #c0c0c0;
+  -moz-border-radius: 0;
+  -webkit-border-radius: 0;
+  border-radius: 0;
+  border-top: 1px solid #ffffff;
+  border-left: 1px solid #ffffff;
+  border-bottom: 1px solid #000000;
+  border-right: 1px solid #000000;
+  -moz-box-shadow: inset #808080 -1px -1px 0px 1px;
+  -webkit-box-shadow: inset #808080 -1px -1px 0px 1px;
+  box-shadow: inset #808080 -1px -1px 0px 1px;
+}
+#reader-container .content .pages .overlayer .page .overlay.open .icon {
+  color: #fff;
+  top: 0;
+  left: 0;
+}
+#reader-container .content .pages .overlayer .page .overlay.open .controls {
+  top: 0;
+  right: 0;
+}
+#reader-container .content .pages .overlayer .page .overlay.open .controls .icon {
+  background: #c0c0c0;
+  -moz-border-radius: 0;
+  -webkit-border-radius: 0;
+  border-radius: 0;
+  border-top: 1px solid #ffffff;
+  border-left: 1px solid #ffffff;
+  border-bottom: 1px solid #000000;
+  border-right: 1px solid #000000;
+  -moz-box-shadow: inset #808080 -1px -1px 0px 1px;
+  -webkit-box-shadow: inset #808080 -1px -1px 0px 1px;
+  box-shadow: inset #808080 -1px -1px 0px 1px;
+  color: #000000;
+  height: 26px;
+  width: 26px;
+  top: 3px;
+  right: 3px;
+  left: auto;
+  line-height: 25px;
+  bottom: auto;
+}
+#reader-container .content .pages .overlayer .page .overlay.open .controls .icon:active,
+#reader-container .content .pages .overlayer .page .overlay.open .controls .icon.pressed {
+  -moz-border-radius: 0;
+  -webkit-border-radius: 0;
+  border-radius: 0;
+  border-top: 2px solid #000000;
+  border-left: 1px solid #000000;
+  border-bottom: 1px solid #ffffff;
+  border-right: 1px solid #ffffff;
+  -moz-box-shadow: inset #808080 1px 1px 0px 1px;
+  -webkit-box-shadow: inset #808080 1px 1px 0px 1px;
+  box-shadow: inset #808080 1px 1px 0px 1px;
+  background: #c0c0c0;
+}
+#reader-container .content .pages .overlayer .page .overlay .dimmer {
+  bottom: auto;
+  height: 32px;
+  background: #000080;
+}
+#reader-container .content .pages .overlayer .page .overlay .dimmer:after {
+  content: "";
+  display: block;
+  font: 18px "MS Sans Serif", sans-serif;
+  font-weight: normal;
+  color: #fff;
+  position: absolute;
+  left: 37px;
+  top: 6px;
+}
+#reader-container .content .pages .overlayer .page .overlay.embed .dimmer:after {
+  content: "Web Explorer 1.2";
+}
+#reader-container .content .pages .overlayer .page .overlay.audio .dimmer:after {
+  content: "Media Player";
+}
+#reader-container .content .pages .overlayer .page .overlay.video .dimmer:after {
+  content: "Media Player";
+}
+#reader-container .content .pages .overlayer .page .overlay.image .dimmer:after {
+  content: "Photo Viewer";
+}
+#reader-container .content .pages .overlayer .page .overlay.gallery .dimmer:after {
+  content: "Slideshow";
+}
+#reader-container .content .pages .overlayer .page .overlay.html .dimmer:after {
+  content: "Padnotes";
+}
+#reader-container .content .pages .overlayer .page .overlay .content {
+  -moz-border-radius: 0;
+  -webkit-border-radius: 0;
+  border-radius: 0;
+  border-top: 2px solid #000000;
+  border-left: 1px solid #000000;
+  border-bottom: 1px solid #ffffff;
+  border-right: 1px solid #ffffff;
+  -moz-box-shadow: inset #808080 1px 1px 0px 1px;
+  -webkit-box-shadow: inset #808080 1px 1px 0px 1px;
+  box-shadow: inset #808080 1px 1px 0px 1px;
+  background: #c0c0c0;
+  background: #fff;
+}
+#reader-container .content .pages .overlayer .page .overlay.audio .content {
+  border: 0;
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+#reader-container .content .pages .overlayer .page .overlay.audio .content .wrap .controller .slider {
+  margin: 0 8px;
+}
+#reader-container .content .pages .overlayer .page .overlay.audio .content .wrap .controller .slider .track {
+  -moz-border-radius: 0;
+  -webkit-border-radius: 0;
+  border-radius: 0;
+  border-top: 2px solid #000000;
+  border-left: 1px solid #000000;
+  border-bottom: 1px solid #ffffff;
+  border-right: 1px solid #ffffff;
+  -moz-box-shadow: inset #808080 1px 1px 0px 1px;
+  -webkit-box-shadow: inset #808080 1px 1px 0px 1px;
+  box-shadow: inset #808080 1px 1px 0px 1px;
+  background: #c0c0c0;
+  background: #fff;
+  height: 14px;
+}
+#reader-container .content .pages .overlayer .page .overlay.audio .content .wrap .controller .slider .track .fill {
+  display: none;
+}
+#reader-container .content .pages .overlayer .page .overlay.audio .content .wrap .controller .slider .thumb {
+  background: #c0c0c0;
+  -moz-border-radius: 0;
+  -webkit-border-radius: 0;
+  border-radius: 0;
+  border-top: 1px solid #ffffff;
+  border-left: 1px solid #ffffff;
+  border-bottom: 1px solid #000000;
+  border-right: 1px solid #000000;
+  -moz-box-shadow: inset #808080 -1px -1px 0px 1px;
+  -webkit-box-shadow: inset #808080 -1px -1px 0px 1px;
+  box-shadow: inset #808080 -1px -1px 0px 1px;
+  height: 25px;
+}
+#reader-container .content .pages .overlayer .page .overlay.audio .content .wrap .controller .slider .thumb:active,
+#reader-container .content .pages .overlayer .page .overlay.audio .content .wrap .controller .slider .thumb.pressed {
+  -moz-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+  width: 12px;
+}
+#reader-container .content .pages .overlayer .page .overlay.audio .content .wrap .controller .slider .thumb:active:after,
+#reader-container .content .pages .overlayer .page .overlay.audio .content .wrap .controller .slider .thumb.pressed:after {
+  display: none;
+}
+#reader-container .content .pages .overlayer .page .overlay.audio .content .wrap .controller .icon {
+  color: #000;
+  background: #c0c0c0;
+  -moz-border-radius: 0;
+  -webkit-border-radius: 0;
+  border-radius: 0;
+  border-top: 1px solid #ffffff;
+  border-left: 1px solid #ffffff;
+  border-bottom: 1px solid #000000;
+  border-right: 1px solid #000000;
+  -moz-box-shadow: inset #808080 -1px -1px 0px 1px;
+  -webkit-box-shadow: inset #808080 -1px -1px 0px 1px;
+  box-shadow: inset #808080 -1px -1px 0px 1px;
+}
+#reader-container .content .pages .overlayer .page .overlay.audio .content .wrap .controller .icon:hover {
+  background: #c0c0c0;
+  -moz-border-radius: 0;
+  -webkit-border-radius: 0;
+  border-radius: 0;
+  border-top: 1px solid #ffffff;
+  border-left: 1px solid #ffffff;
+  border-bottom: 1px solid #000000;
+  border-right: 1px solid #000000;
+  -moz-box-shadow: inset #808080 -1px -1px 0px 1px;
+  -webkit-box-shadow: inset #808080 -1px -1px 0px 1px;
+  box-shadow: inset #808080 -1px -1px 0px 1px;
+}
+#reader-container .content .pages .overlayer .page .overlay.audio .content .wrap .controller .icon:active,
+#reader-container .content .pages .overlayer .page .overlay.audio .content .wrap .controller .icon.pressed {
+  -moz-border-radius: 0;
+  -webkit-border-radius: 0;
+  border-radius: 0;
+  border-top: 2px solid #000000;
+  border-left: 1px solid #000000;
+  border-bottom: 1px solid #ffffff;
+  border-right: 1px solid #ffffff;
+  -moz-box-shadow: inset #808080 1px 1px 0px 1px;
+  -webkit-box-shadow: inset #808080 1px 1px 0px 1px;
+  box-shadow: inset #808080 1px 1px 0px 1px;
+  background: #c0c0c0;
+}
+#reader-container .content .pages .page {
+  -moz-box-shadow: rgba(0, 0, 0, 0.5) 2px 2px 0 2px;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.5) 2px 2px 0 2px;
+  box-shadow: rgba(0, 0, 0, 0.5) 2px 2px 0 2px;
+}
+#reader-container .ctrl.btn {
+  margin: 8px;
+  width: 48px;
+  height: 48px;
+  -webkit-touch-callout: none;
+  /* iOS Safari */
+  -webkit-user-select: none;
+  /* Chrome/Safari/Opera */
+  -khtml-user-select: none;
+  /* Konqueror */
+  -moz-user-select: none;
+  /* Firefox */
+  -ms-user-select: none;
+  /* Internet Explorer/Edge */
+  user-select: none;
+  /* Non-prefixed version, currently
+                                  not supported by any browser */
+  background: #c0c0c0;
+  -moz-border-radius: 0;
+  -webkit-border-radius: 0;
+  border-radius: 0;
+  border-top: 1px solid #ffffff;
+  border-left: 1px solid #ffffff;
+  border-bottom: 1px solid #000000;
+  border-right: 1px solid #000000;
+  -moz-box-shadow: inset #808080 -1px -1px 0px 1px;
+  -webkit-box-shadow: inset #808080 -1px -1px 0px 1px;
+  box-shadow: inset #808080 -1px -1px 0px 1px;
+}
+#reader-container .ctrl.btn .icon {
+  font-smooth: never;
+  /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: none;
+  /* Support for Safari and Chrome. */
+  text-rendering: geometricPrecision;
+  /* Support for Firefox. */
+  -moz-osx-font-smoothing: never;
+}
+#reader-container .ctrl.btn:active,
+#reader-container .ctrl.btn.pressed {
+  -moz-border-radius: 0;
+  -webkit-border-radius: 0;
+  border-radius: 0;
+  border-top: 2px solid #000000;
+  border-left: 1px solid #000000;
+  border-bottom: 1px solid #ffffff;
+  border-right: 1px solid #ffffff;
+  -moz-box-shadow: inset #808080 1px 1px 0px 1px;
+  -webkit-box-shadow: inset #808080 1px 1px 0px 1px;
+  box-shadow: inset #808080 1px 1px 0px 1px;
+  background: #c0c0c0;
+}
+#reader-container .ctrl.btn:focus {
+  border-style: dotted;
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  outline: none;
+}
+#reader-container .overviews .thumb {
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  opacity: 1;
+}
+#reader-container .overviews .thumb:after {
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAACCAYAAABytg0kAAAAFUlEQVQYV2NkYGD4z8DAwMjIAAH/AQ8oAgJbL/zzAAAAAElFTkSuQmCC);
+}
+#reader-container .overviews .thumb .loader {
+  opacity: 1;
+}
+#reader-container .overviews .thumb.active .loader {
+  opacity: 1;
+}
