@@ -6,7 +6,7 @@
 
 * Plugin URI:   #
 
-* Description:  WP E-Books Representation Plugin developed with the Co-Work of Umair Akram & Hasnain Khalid 
+* Description:  WP E-Books Representation Plugin developed with the Co-Work of Umair Akram & Hasnain Khalid  
 
 * Version:      1.0
 
@@ -185,4 +185,4 @@ endif;
 add_filter( 'single_template', 'fpdf_custom_books_template' ) ;
 
 
-// Read more at https://www.adviceinteractivegroup.com/blog/using-wordpress-custom-post-type-templates-in-a-plugin/#dTlVjE9vQpyEUKul.99
+// Read more at https://www.adviceinteractivegroup.com/blog/using-wordpress-custom-post-type-templates-in-a-plugin/#dTlVjE9vQpyEUKul.99 
