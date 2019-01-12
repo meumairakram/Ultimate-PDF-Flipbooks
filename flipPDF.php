@@ -114,7 +114,7 @@ add_action('admin_menu', 'my_admin_menu');
 function my_admin_menu() { 
     add_submenu_page('edit.php?post_type=flipbook', 'Settings', 'Settings', 'manage_options', 'settings.php'); 
 }  
-
+ 
 add_action('init','fpdf_register_post_type');
 
 
