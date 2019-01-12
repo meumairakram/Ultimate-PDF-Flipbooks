@@ -99,8 +99,8 @@ add_shortcode('flippdf','fpdf_generate_flip_book');
 function fpdf_register_post_type() {
 
 	$args = array('label' => 'FlipPDF Books',
-					'labels' => array('name' => 'Flip Books',
-									'singular_name' => 'FlipBook',
+                    'labels' => array('name' => 'Flip Books',
+                                    'singular_name' => 'FlipBook',
 									'add_new' => 'Add new Book',
 									'add_new_item' => 'Add new Book',
 									'edit_item' => _x('Edit Book','flipbook label'),
@@ -110,6 +110,10 @@ function fpdf_register_post_type() {
 
 	register_post_type('flipbook',$args);
 }
+add_action('admin_menu', 'my_admin_menu'); 
+function my_admin_menu() { 
+    add_submenu_page('edit.php?post_type=flipbook', 'Settings', 'Settings', 'manage_options', 'settings.php'); 
+}  
 
 add_action('init','fpdf_register_post_type');
 
