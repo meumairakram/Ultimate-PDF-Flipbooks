@@ -10,7 +10,7 @@
 
 * Version:      1.0
 
-* Author:       Umair Akram & Hasnain Khalid
+* Author:       Umair Akram & M Hasnain Khalid
 
 * Author URI:   #
 
