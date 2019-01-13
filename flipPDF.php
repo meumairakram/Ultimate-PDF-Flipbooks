@@ -120,12 +120,11 @@ function my_admin_menu() {
         'settings_show');
 
 }
- 
 add_action('init','fpdf_register_post_type');
-function settings_show(){
-    //echo 'love is life'; 
-    require('settings.php');
 
+function settings_show(){
+    // Get all output for settings page
+    require('settings.php');
 }
 
 
