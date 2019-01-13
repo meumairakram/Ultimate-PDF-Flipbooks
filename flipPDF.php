@@ -111,11 +111,22 @@ function fpdf_register_post_type() {
 	register_post_type('flipbook',$args);
 }
 add_action('admin_menu', 'my_admin_menu'); 
-function my_admin_menu() { 
-    add_submenu_page('edit.php?post_type=flipbook', 'Settings', 'Settings', 'manage_options', ''.plugins_url().'/flipPDF/settings.php'); 
-}  
+function my_admin_menu() {  
+        add_submenu_page('edit.php?post_type=flipbook', 
+        'Settings', 
+        'Settings', 
+        8, 
+        'settings-page', 
+        'settings_show');
+
+}
  
 add_action('init','fpdf_register_post_type');
+function settings_show(){
+    //echo 'love is life'; 
+    require('settings.php');
+
+}
 
 
 function fpdf_new_book_cover_meta() {
