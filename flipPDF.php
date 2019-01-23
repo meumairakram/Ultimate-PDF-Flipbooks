@@ -20,11 +20,7 @@
 
 ****/
 
-
-
 //define(MH_PATH, plugins_url());
-
-
 
 function fpdf_enqueue_styles() {
 
@@ -36,8 +32,12 @@ function fpdf_enqueue_styles() {
 
 }
 
-add_action( 'wp_enqueue_scripts', 'fpdf_enqueue_styles' );
+function fpdf_admin_enqueue_styles() {
+    wp_enqueue_style( 'custom_css', plugins_url() . '/flipPDF/includes/css/custom_style.css');
+}
 
+add_action( 'wp_enqueue_scripts', 'fpdf_enqueue_styles' );
+add_action( 'admin_enqueue_scripts', 'fpdf_admin_enqueue_styles' );
 
 function fpdf_generate_flip_book($atts) {
 

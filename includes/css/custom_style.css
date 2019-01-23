@@ -1,0 +1,86 @@
+#poststuff .postbox-container {
+    width: 98%;
+    background: #fff;
+    box-sizing: border-box;
+    padding: 20px;
+    padding-top: 0px;
+} 
+h2.heading{
+
+}
+.field-holder:first-child {
+    border-top: none;
+    padding-top: 15px;
+}
+
+.rt-setting-holder .field-holder {
+    padding: 10px;
+}
+.rt-setting-holder .field-holder .field-label {
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+.field-holder .field-label {
+    float: left;
+    max-width: 150px;
+    width: 25%;
+}
+.field-holder .field {
+    float: left;
+    width: 75%;
+} 
+.field-label {
+    float: left;
+    max-width: 150px;
+    width: 25%;
+} 
+h2.heading {
+    font-size: 33px !important;
+}
+.flip-container .postbox-container {
+    padding-left: 10px;
+}
+.flip-container h2.heading {
+    margin-left: 0 !important;
+    padding: 0 !important;
+    margin-bottom: 1px !important;
+    margin-top: 10px !important;
+} 
+.wp-admin .flip-container select, .wp-admin .flip-container input {
+    padding: 2px;
+    line-height: 28px;
+    height: 29px;
+    vertical-align: middle;
+    min-width: 200px;
+}
+.flip-container .field {
+    margin: 20px 0;
+    display: contents;
+}
+.flip-container .postbox {
+    position: relative;
+    min-width: 255px;
+    border: 1px solid #926f6f;
+    box-shadow: 0 1px 1px rgba(0,0,0,.04);
+    background: #fff;
+    max-width: 70%;
+    margin-top: 15px;
+    margin-bottom: 15px !important; 
+}
+.flip-container .inside {
+    margin: 6px 0 0 0;
+}
+.flip-container .postbox .inside {
+    margin: 11px 0;
+    position: relative;
+}
+.flip-container .postbox .inside>p:last-child, .flip-container .rss-widget ul li:last-child {
+    margin-bottom: 1px!important;
+}
+.flip-container input.large-text.code.rt-code-sc {
+    color: #fff;
+    background: #7e7e7e;
+    font-weight: bold;
+    padding-top: 5px;
+    padding-bottom: 6px;
+}
