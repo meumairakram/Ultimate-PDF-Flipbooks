@@ -34,6 +34,8 @@ function fpdf_enqueue_styles() {
 
 function fpdf_admin_enqueue_styles() {
     wp_enqueue_style( 'custom_css', plugins_url() . '/flipPDF/includes/css/custom_style.css');
+    wp_enqueue_script( 'custom_js_admin', plugins_url() . '/flipPDF/includes/js/admin_js.js');
+
 }
 
 add_action( 'wp_enqueue_scripts', 'fpdf_enqueue_styles' );
