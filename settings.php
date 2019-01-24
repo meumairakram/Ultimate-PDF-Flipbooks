@@ -7,12 +7,12 @@
         <div class="postbox rt-after-title" style="margin-bottom: 0;">
                 <div class="inside">
                     <p>
-                        <input type="text" onfocus="this.select();" readonly="readonly" value="[the-post id=&quot;18&quot; title=&quot;&quot;]" class="large-text code rt-code-sc">
+                        <input type="text" onfocus="this.select();" readonly="readonly" value="[the-post id=&quot;18&quot; title=&quot;Love is life&quot;]" class="large-text code rt-code-sc">
                     </p>
                 </div>
             </div>
 
-            
+
         <div class="field">
             <div class="field-holder ">
                 <div class="field-label">
