@@ -63,7 +63,7 @@ h2.heading {
     border: 1px solid #926f6f;
     box-shadow: 0 1px 1px rgba(0,0,0,.04);
     background: #fff;
-    max-width: 70%;
+    max-width: 90%;
     margin-top: 15px;
     margin-bottom: 15px !important; 
 }
@@ -83,4 +83,15 @@ h2.heading {
     font-weight: bold;
     padding-top: 5px;
     padding-bottom: 6px;
+}
+.flip-container p.shortcode {
+    color: #000;
+    background: #aed0bb;
+    font-weight: bold;
+    padding-top: 7px;
+    padding-left: 8px;
+    font-weight: normal;
+    padding-bottom: 6px;
+    height: 24px;
+    font-size: 15px;
 }
