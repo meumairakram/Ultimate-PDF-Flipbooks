@@ -17,7 +17,6 @@
                 </div>
             </div>
 
-
         <div class="field">
             <div class="field-holder ">
                 <div class="field-label">
@@ -25,8 +24,19 @@
                 </div>
                 <div class="field">
                     <select id="posts_pdf" class="inner-filed pdf-check" >
-                        <option value="11111">First</option>
-                        <option value="22222" >2nd to check</option>
+                        <?php
+                            $query = new WP_Query( array('post_type' => 'flipbook') );
+                            if( $query->have_posts() ): $query->the_posts(); 
+                                while ( $query->have_posts() ) : $query->the_post(); ?>
+                                <option value="<?php echo get_the_id();?>">
+                                    <?php //get_the_ID();?>
+                                    <?php the_title();?>
+                                </option>
+                                <?php endwhile; wp_reset_postdata(); ?>
+                            <?php endif; ?>
+                        
+                        <!-- <option value="11111">First</option>
+                        <option value="22222" >2nd to check</option> -->
                     </select>
                 </div>
             </div>
