@@ -130,3 +130,33 @@ endif;
  
 add_filter( 'single_template', 'fpdf_custom_books_template' ) ;
 // Read more at https://www.adviceinteractivegroup.com/blog/using-wordpress-custom-post-type-templates-in-a-plugin/#dTlVjE9vQpyEUKul.99 
+
+
+function fpdf_save_pdf_books($post_id) {
+
+    // If autosave then return nothing
+    if(defined('DOING_AUTOSAVE') && DOING_AUTOSAVE ) {return post_id;}
+
+    $upload_nonce = $_POST['wp_custom_attachment_nonce'];
+
+    if(isset($upload_nonce) && wp_verify_nonce($upload_nonce,'wp_custom_attachment_nonce') && current_user_can('edit_post',$post_id)) {
+
+        // Files to be uploaded here, tests passed
+
+        require_once( ABSPATH . 'wp-admin/includes/image.php' );
+        require_once( ABSPATH . 'wp-admin/includes/file.php' );
+        require_once( ABSPATH . 'wp-admin/includes/media.php' );
+
+        // changing file name to match our naming convention
+        $_FILES['fpdf_book_attachment']['name'] = 'flip_book_'.$post_id;
+
+    }
+    
+    
+    
+
+    var_dump($_FILES['fpdf_book_attachment']); die();
+
+}
+
+add_action('save_post_flipbook','fpdf_save_pdf_books');
