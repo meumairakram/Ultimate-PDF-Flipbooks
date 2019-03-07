@@ -88,7 +88,7 @@ function fpdf_add_custom_meta_boxes() {
 }
 add_action('add_meta_boxes', 'fpdf_add_custom_meta_boxes');  
 function fpdf_wp_custom_attachment() {  
-    wp_nonce_field(plugin_basename(__FILE__), 'wp_custom_attachment_nonce');
+    wp_nonce_field('wp_custom_attachment_nonce');
     $html = '<p class="description">';
     $html .= 'Upload your PDF Book here.';
     $html .= '</p>';
@@ -118,6 +118,7 @@ function fpdf_update_edit_form() {
     echo ' enctype="multipart/form-data"';
 }
 add_action('post_edit_form_tag', 'fpdf_update_edit_form');
+
 if( !function_exists('fpdf_custom_books_template') ):
  function fpdf_custom_books_template($single_template) {
     global $wp_query, $post;
@@ -132,31 +133,64 @@ add_filter( 'single_template', 'fpdf_custom_books_template' ) ;
 // Read more at https://www.adviceinteractivegroup.com/blog/using-wordpress-custom-post-type-templates-in-a-plugin/#dTlVjE9vQpyEUKul.99 
 
 
-function fpdf_save_pdf_books($post_id) {
+// function fpdf_save_pdf_books($post_id) {
 
-    // If autosave then return nothing
-    if(defined('DOING_AUTOSAVE') && DOING_AUTOSAVE ) {return post_id;}
+//     // If autosave then return nothing
+//     if(defined('DOING_AUTOSAVE') && DOING_AUTOSAVE ) {return post_id;}
 
-    $upload_nonce = $_POST['wp_custom_attachment_nonce'];
+//     $upload_nonce = $_POST['wp_custom_attachment_nonce'];
 
-    if(isset($upload_nonce) && wp_verify_nonce($upload_nonce,'wp_custom_attachment_nonce') && current_user_can('edit_post',$post_id)) {
+//     var_dump(wp_verify_nonce($upload_nonce,'wp_custom_attachment_nonce')); die();
 
-        // Files to be uploaded here, tests passed
+//     if(isset($upload_nonce) && wp_verify_nonce($upload_nonce,'wp_custom_attachment_nonce') && current_user_can('edit_post',$post_id) && isset($_FILES['fpdf_book_attachment'])) {
 
-        require_once( ABSPATH . 'wp-admin/includes/image.php' );
-        require_once( ABSPATH . 'wp-admin/includes/file.php' );
-        require_once( ABSPATH . 'wp-admin/includes/media.php' );
+//         // Files to be uploaded here, tests passed
 
-        // changing file name to match our naming convention
-        $_FILES['fpdf_book_attachment']['name'] = 'flip_book_'.$post_id;
+//         require_once( ABSPATH . 'wp-admin/includes/image.php' );
+//         require_once( ABSPATH . 'wp-admin/includes/file.php' );
+//         require_once( ABSPATH . 'wp-admin/includes/media.php' );
 
-    }
+//         // changing file name to match our naming convention
+//         $_FILES['fpdf_book_attachment']['name'] = 'flip_book_'.$post_id;
+
+
+//         $upload_dir = wp_upload_dir();
+
+//         $upload_dir = $upload_dir['basedir'];
+
+//         var_dump($upload_dir); die();
+    
+//         // Uploading Files 
+
+//         $errors= array();
+//         $file_name = $_FILES['fpdf_book_attachment']['name'];
+//         $file_size =$_FILES['fpdf_book_attachment']['size'];
+//         $file_tmp =$_FILES['fpdf_book_attachment']['tmp_name'];
+//         $file_type=$_FILES['fpdf_book_attachment']['type'];
+//         $file_ext=strtolower(end(explode('.',$_FILES['fpdf_book_attachment']['name'])));
+        
+//         $extensions= array("pdf");
+        
+//         if(in_array($file_ext,$extensions)=== false){
+//            $errors[]="extension not allowed, please choose a PDF File Format.";
+//         }
+        
+//         if($file_size > 2097152){
+//            $errors[]='File size must be excately 2 MB';
+//         }
+        
+//         if(empty($errors)==true){
+//            //move_uploaded_file($file_tmp,"images/".$file_name);
+//            echo "Success"; exit;
+//         }else{
+//            print_r($errors); var_dump(wp_upload_dir()); exit;
+           
+//         }
     
     
     
+//     }
 
-    var_dump($_FILES['fpdf_book_attachment']); die();
+// }
 
-}
-
-add_action('save_post_flipbook','fpdf_save_pdf_books');
+// add_action('save_post_flipbook','fpdf_save_pdf_books');
