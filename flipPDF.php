@@ -273,6 +273,40 @@ function fpdf_save_pdf_books($post_id) {
 add_action('save_post_flipbook','fpdf_save_pdf_books');
 
 
+// add shortcode support 
+
+function fpdf_create_shortcode($atts) {
+
+    $params = shortcode_atts(array('book_id' => null,
+                                    'thumbnails' => 'false',
+                                    'allow-fullscreen' => 'true',
+                                    'allow-download' => 'true',
+                                    'classes' => 'flipbook',
+                                    'slideshow' => 'false',
+                                    'page-layout' => 'double',
+                                    'width' => '100%',
+                                    'height' => '500px'),$atts);
+
+    if($params['book_id'] != null) {
+        $output = '<div id="reader-container" class="'.$params['classes'].'" data-path="'.wp_upload_dir()['baseurl'].'/flipbooks/flipbook_'.$params['book_id'].'" data-show-thumbnails="'.$params['thumbnails'].'" data-slideshow="'.$params['slideshow'].'" data-page-mode="'.$params['page-layout'].'" data-show-fullscreen="'.$params['allow-fullscreen'].'" data-show-download="'.$params['allow-download'].'"></div>';
+        return $output;
+    } else {
+        $output = 'Invalid Book ID OR Book Not Found.';
+        return $output;
+    }
+
+}
+
+add_shortcode('fpdf_ebook','fpdf_create_shortcode');
+
+
+
+
+
+
+
+
+
 
 
 // admin level notices 

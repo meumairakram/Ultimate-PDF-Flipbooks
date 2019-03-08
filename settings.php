@@ -11,7 +11,7 @@
                     </p> -->
 
                     <p id="allshortcode" class="shortcode" onclick="selectText('allshortcode')" >
-                        [title="Flip PDF" ThePostid="<span id="pdfId" >XXX</span>" Zoom="<span id="zoomId" >yes</span>" Thumbnails="<span id="thumbnailsid" >yes</span>" Classes="<span id="classesid"></span>" SlideShow="<span id="slideid">yes</span>"   EnableFlippingSound="<span id="flippingid">yes</span>" ]
+                        [fpdf_ebook book_id="<span id="pdfId" >XXX</span>" Zoom="<span id="zoomId" >yes</span>" Thumbnails="<span id="thumbnailsid" >yes</span>" Classes="<span id="classesid"></span>" SlideShow="<span id="slideid">yes</span>"   EnableFlippingSound="<span id="flippingid">yes</span>" ]
                     </p>
 
                 </div>
