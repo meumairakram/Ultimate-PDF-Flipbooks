@@ -1,16 +1,26 @@
-#poststuff .postbox-container {
+/* #poststuff .postbox-container {
     width: 98%;
     background: #fff;
     box-sizing: border-box;
     padding: 20px;
     padding-top: 0px;
-} 
-h2.heading{
+}  */
+/* h2.heading{
 
-}
+} */
 .field-holder:first-child {
     border-top: none;
     padding-top: 15px;
+}
+
+strong.already_attached {
+    color: #15a615;
+    text-align: center;
+    width: 100%;
+    display: block;
+    margin: 20px 0px;
+    border: 2px solid;
+    padding: 10px 0px;
 }
 
 .rt-setting-holder .field-holder {

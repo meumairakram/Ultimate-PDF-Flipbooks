@@ -82,6 +82,8 @@ function fpdf_register_post_type() {
 }
 add_action('admin_menu', 'my_admin_menu'); 
 function my_admin_menu() {  
+
+    // var_dump(plugin_dir_path(__FILE__)); die();
         add_submenu_page('edit.php?post_type=flipbook', 
         'Settings', 
         'Settings', 
@@ -104,7 +106,16 @@ function fpdf_add_custom_meta_boxes() {
 }
 add_action('add_meta_boxes', 'fpdf_add_custom_meta_boxes');  
 function fpdf_wp_custom_attachment() {  
+
+    $post_id = get_the_ID();
+    $post_meta =  get_post_meta($post_id,'fpdf_book_foldername',true);
     $html = wp_nonce_field('2635','pdf_upload_nonce',true,false);
+
+    if(!empty($post_meta)) {
+        $html .= '<strong class="already_attached">Already have a book Attached, reuploading will override it.</strong>';
+    }
+    
+
     $html .= '<p class="description">';
     $html .= 'Upload your PDF Book here.';
     $html .= '</p>';
@@ -165,8 +176,6 @@ function fpdf_save_pdf_books($post_id) {
 
     $upload_nonce = $_POST['pdf_upload_nonce'];
 
-    // var_dump(wp_verify_nonce($upload_nonce,'2635')); die();
-
     if(isset($upload_nonce) && wp_verify_nonce($upload_nonce,'2635') && current_user_can('edit_post',$post_id) && isset($_FILES['fpdf_book_attachment'])) {
 
         // Files to be uploaded here, tests passed
@@ -196,33 +205,62 @@ function fpdf_save_pdf_books($post_id) {
         $file_type=$_FILES['fpdf_book_attachment']['type'];
         $file_ext=strtolower(end(explode('.',$_FILES['fpdf_book_attachment']['name'])));
         
-        $extensions= array("pdf","png");
+        $extensions= array("pdf");
         
-        // if(in_array($file_ext,$extensions)=== false){
-        //    $errors[]="extension not allowed, please choose a PDF File Format.";
-        // }
+        if(in_array($file_ext,$extensions)=== false){
+           $errors[]="extension not allowed, please choose a PDF File Format.";
+        }
         
-        if($file_size > 2097152){
-           $errors[]='File size must be excately 2 MB';
+        if($file_size > 52428800){
+           $errors[]='File size must be less than 50 MB';
         }
         
         if(empty($errors)==true){
 
             // check if folder already exists then donot re create the folder
            if(file_exists(FPDF_UPLOAD_PATH.'/'.$folder_name)) {
+                // cleaning the whole folder first
+
+                $files = glob(FPDF_UPLOAD_PATH.'/'.$folder_name. '/*');
+ 
+                //Loop through the file list.
+                foreach($files as $file){
+                    //Make sure that this is a file and not a directory.
+                    if(is_file($file)){
+                        //Use the unlink function to delete the file.
+                        unlink($file);
+                    }
+                }
+
+
+
                 move_uploaded_file($file_tmp,FPDF_UPLOAD_PATH.'/'.$folder_name."/".$file_name.'.'.$file_ext);
                 //var_dump($file_name.'.'.$file_ext);
-                echo "Success"; exit;
+                 //reading the sample file
+                $rendering_script = file_get_contents(plugin_dir_path(__FILE__).'/includes/documents/doc1/upload.php');
+                 // placing the file in the same directory
+                $place_script = file_put_contents(FPDF_UPLOAD_PATH.'/'.$folder_name.'/upload.php',$rendering_script);
+                
+                update_post_meta($post_id,'fpdf_book_foldername',$folder_name);
+
+                // echo "Success"; exit;
 
             } else {
                 // if the folder donot exists then create the folder first
                 mkdir(FPDF_UPLOAD_PATH.'/'.$folder_name);
                 move_uploaded_file($file_tmp,FPDF_UPLOAD_PATH.'/'.$folder_name."/".$file_name.'.'.$file_ext);
-                //var_dump($file_name.'.'.$file_ext);
-                echo "Success"; exit;
+                
+                //reading the sample file
+                $rendering_script = file_get_contents(plugin_dir_path(__FILE__).'/includes/documents/doc1/upload.php');
+                // placing the file in the same directory
+                $place_script = file_put_contents(FPDF_UPLOAD_PATH.'/'.$folder_name.'/upload.php',$rendering_script);
+              
+                update_post_meta($post_id,'fpdf_book_foldername',$folder_name);
+               
             }
-        }else{
-           print_r($errors); var_dump(wp_upload_dir()); exit;
+        } else{        
+            
+            add_action('admin_notices','fpdf_failure_notice');
            
         }
     
@@ -233,3 +271,23 @@ function fpdf_save_pdf_books($post_id) {
 }
 
 add_action('save_post_flipbook','fpdf_save_pdf_books');
+
+
+
+
+// admin level notices 
+if(!function_exists('fpdf_failure_notice')) {
+    function fpdf_failure_notice() {
+        ?>
+    <div class="notice notice-error is-dismissible">
+        <p> <?php _e('There is a problem uploading your book','failure-notice-for-flippdf'); ?> </p>
+    </div>
+
+<?php
+    }
+
+}
+
+
+
+
