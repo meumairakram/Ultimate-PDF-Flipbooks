@@ -285,10 +285,10 @@ function fpdf_create_shortcode($atts) {
                                     'slideshow' => 'false',
                                     'page-layout' => 'double',
                                     'width' => '100%',
-                                    'height' => '500px'),$atts);
+                                    'height' => '500'),$atts);
 
     if($params['book_id'] != null) {
-        $output = '<div id="reader-container" class="'.$params['classes'].'" data-path="'.wp_upload_dir()['baseurl'].'/flipbooks/flipbook_'.$params['book_id'].'" data-show-thumbnails="'.$params['thumbnails'].'" data-slideshow="'.$params['slideshow'].'" data-page-mode="'.$params['page-layout'].'" data-show-fullscreen="'.$params['allow-fullscreen'].'" data-show-download="'.$params['allow-download'].'"></div>';
+        $output = '<div id="reader-container" style="height:'.$params['height'].';width:'.$params['width'].';" class="flipbook_wrap '.$params['classes'].'" data-path="'.wp_upload_dir()['baseurl'].'/flipbooks/flipbook_'.$params['book_id'].'" data-show-thumbnails="'.$params['thumbnails'].'" data-slideshow="'.$params['slideshow'].'" data-page-mode="'.$params['page-layout'].'" data-show-fullscreen="'.$params['allow-fullscreen'].'" data-show-download="'.$params['allow-download'].'"></div>';
         return $output;
     } else {
         $output = 'Invalid Book ID OR Book Not Found.';

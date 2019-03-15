@@ -1,5 +1,7 @@
 jQuery(document).ready(function(){
 
+  let elements = ['#posts_pdf','#zoom_pdf','#thumbnails_pdf','#classes_pdf','#slide_pdf','#flipping_pdf'];
+
   jQuery('#posts_pdf').on('change', function() {
     //alert( this.value );
     jQuery('#pdfId').html(this.value);
@@ -47,3 +49,4 @@ function selectText(containerid) {
   }
   console.log('Shortcode is selected');
 }
+
