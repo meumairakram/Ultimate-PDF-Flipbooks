@@ -80,6 +80,10 @@ function fpdf_register_post_type() {
 					'supports' => array('title','editor','revisions'));
 	register_post_type('flipbook',$args);
 }
+
+add_action('init','fpdf_register_post_type');
+
+
 add_action('admin_menu', 'my_admin_menu'); 
 function my_admin_menu() {  
 
@@ -91,11 +95,13 @@ function my_admin_menu() {
         'settings-page', 
         'settings_show');
 }
-add_action('init','fpdf_register_post_type');
+
 function settings_show(){
     // Get all output for settings page
     require('settings.php');
 }
+
+
 function fpdf_new_book_cover_meta() {
 	    add_meta_box('postimagediv', __('Book Cover Image'), 'post_thumbnail_meta_box', 'flipbook', 'side', 'low');
 }

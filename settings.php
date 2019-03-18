@@ -11,7 +11,7 @@
                     </p> -->
 
                     <p id="allshortcode" class="shortcode" onclick="selectText('allshortcode')" >
-                        [fpdf_ebook book_id="<span id="pdfId" >XXX</span>" Zoom="<span id="zoomId" >yes</span>" Thumbnails="<span id="thumbnailsid" >yes</span>" Classes="<span id="classesid"></span>" SlideShow="<span id="slideid">yes</span>"   EnableFlippingSound="<span id="flippingid">yes</span>" ]
+                        [fpdf_ebook book_id="<span id="pdfId" >XXX</span>" allow-download="<span id="allow_download" >false</span>" thumbnails="<span id="thumbnailsid" >false</span>" classes="<span id="classesid"></span>" slideshow="<span id="slideid">yes</span>"   allow-fullscreen="<span id="flippingid">yes</span>" page-layout="<span id="page_layoutid">auto</span>" width="<span id="cont_widthid">100%</span>" height="<span id="cont_heightid">500px</span>"]
                     </p>
 
                 </div>
@@ -24,6 +24,7 @@
                 </div>
                 <div class="field">
                     <select id="posts_pdf" class="inner-filed pdf-check" >
+                        <option value="" selected>Select a Book</option>
                         <?php
                             $query = new WP_Query( array('post_type' => 'flipbook') );
                             if( $query->have_posts() ): $query->the_posts(); 
@@ -45,12 +46,12 @@
         <div class="field">
             <div class="field-holder ">
                 <div class="field-label">
-                    <label>Show Zoom</label>
+                    <label>Allow download</label>
                 </div>
                 <div class="field">
-                    <select id="zoom_pdf" class="inner-filed" >
-                        <option value="yes">Yes</option>
-                        <option value="no" >No</option>
+                    <select id="allow_download_selector" class="inner-filed" >
+                        <option value="true">Yes</option>
+                        <option value="false" selected>No</option>
                     </select>
                 </div>
             </div>
@@ -63,8 +64,8 @@
                 </div>
                 <div class="field">
                     <select id="thumbnails_pdf" class="inner-filed" >
-                        <option value="yes">Yes</option>
-                        <option value="no" >No</option>
+                        <option value="true">Yes</option>
+                        <option value="false" selected>No</option>
                     </select>
                 </div>
             </div>
@@ -88,7 +89,7 @@
                     </div>
                     <div class="field">
                             <select id="slide_pdf" class="inner-filed" >
-                                    <option value="yes">Yes</option>
+                                    <option value="true">Yes</option>
                                     <option value="no" >No</option>
                             </select>
                     </div>
@@ -99,15 +100,57 @@
         <div class="field">
                 <div class="field-holder ">
                     <div class="field-label">
-                        <label>Enable Flipping Sound</label>
+                        <label>Allow Fullscreen</label>
                     </div>
                     <div class="field">
                             <select id="flipping_pdf" class="inner-filed" >
-                                    <option value="yes">Yes</option>
-                                    <option value="no" >No</option>
+                                    <option value="true">Yes</option>
+                                    <option value="false" >No</option>
                             </select>
                     </div>
                 </div>
+        </div>
+
+
+        <div class="field">
+                <div class="field-holder ">
+                    <div class="field-label">
+                        <label>Page Layout</label>
+                    </div>
+                    <div class="field">
+                            <select id="page_layout" class="inner-filed" >
+                                    <option value="auto" selected>Auto</option>
+                                    <option value="double" >Double</option>
+                                    <option value="single" >Single</option>
+                            </select>
+                    </div>
+                </div>
+        </div>
+
+    <!-- // Page width -->
+        <div class="field">
+            <div class="field-holder ">
+                <div class="field-label">
+                    <label>Container Width</label>
+                </div>
+                <div class="field">
+                    <input class="inner-filed" type="text" placeholder="In percentage or px (eg : 100% OR 400px)" value="100%" id="container_width">
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Page height  -->
+
+        <div class="field">
+            <div class="field-holder ">
+                <div class="field-label">
+                    <label>Container Height</label>
+                </div>
+                <div class="field">
+                    <input class="inner-filed" type="text" placeholder="In pixels (eg: 600px)" value="500px" id="container_height">
+                </div>
+            </div>
         </div>
 
        

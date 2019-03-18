@@ -1,15 +1,15 @@
 jQuery(document).ready(function(){
 
-  let elements = ['#posts_pdf','#zoom_pdf','#thumbnails_pdf','#classes_pdf','#slide_pdf','#flipping_pdf'];
+  let elements = ['#posts_pdf','#allow_download','#thumbnails_pdf','#classes_pdf','#slide_pdf','#flipping_pdf'];
 
   jQuery('#posts_pdf').on('change', function() {
     //alert( this.value );
     jQuery('#pdfId').html(this.value);
   });
 
-  jQuery('#zoom_pdf').on('change', function() {
+  jQuery('#allow_download_selector').on('change', function() {
     //alert( this.value );
-    jQuery('#zoomId').html(this.value);
+    jQuery('#allow_download').html(this.value);
   });
   
 
@@ -28,7 +28,29 @@ jQuery(document).ready(function(){
     jQuery('#slideid').html(this.value);
   });
 
+  jQuery('#page_layout').on('change', function() {
+    //alert( this.value );
+    jQuery('#page_layoutid').html(this.value);
+  });
 
+
+  jQuery('#flipping_pdf').on('change', function() {
+    //alert( this.value );
+    jQuery('#flippingid').html(this.value);
+  });
+
+  
+  jQuery('#container_height').on('change', function() {
+    //alert( this.value );
+    jQuery('#cont_heightid').html(this.value);
+  });
+
+  jQuery('#container_width').on('change', function() {
+    //alert( this.value );
+    jQuery('#cont_widthid').html(this.value);
+  });
+
+  
   jQuery('#flipping_pdf').on('change', function() {
     //alert( this.value );
     jQuery('#flippingid').html(this.value);
