@@ -24,9 +24,9 @@ register_activation_hook(__FILE__,'fpdf_check_uploading_directory');
 
 
 function fpdf_enqueue_styles() {
-    wp_enqueue_style( 'flippdf_css', plugins_url().'/flipPDF/includes/css/magalone.min.css');
+    wp_enqueue_style( 'flippdf_css', plugins_url().'/flipPDF/includes/css/fpdf_style.min.css');
     wp_enqueue_style( 'maglone_font', 'https://fonts.googleapis.com/icon?family=Material+Icons');
-    wp_enqueue_script('flippdf_js', plugins_url().'/flipPDF/includes/js/magalone.min.js');
+    wp_enqueue_script('flippdf_js', plugins_url().'/flipPDF/includes/js/fpdf_render.min.js');
 }
 function fpdf_admin_enqueue_styles() {
     wp_enqueue_style( 'custom_css', plugins_url() . '/flipPDF/includes/css/custom_style.css');
