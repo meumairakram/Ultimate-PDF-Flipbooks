@@ -96,12 +96,12 @@ h2.heading {
 }
 .flip-container p.shortcode {
     color: #000;
-    background: #aed0bb;
+    background: #e8e8e8;
     font-weight: bold;
     padding-top: 7px;
     padding-left: 8px;
     font-weight: normal;
     padding-bottom: 6px;
-    height: 24px;
+    /* height: 24px; */
     font-size: 15px;
 }

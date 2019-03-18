@@ -84,8 +84,8 @@ function fpdf_register_post_type() {
 add_action('init','fpdf_register_post_type');
 
 
-add_action('admin_menu', 'my_admin_menu'); 
-function my_admin_menu() {  
+add_action('admin_menu', 'fpdf_my_admin_menu'); 
+function fpdf_my_admin_menu() {  
 
     // var_dump(plugin_dir_path(__FILE__)); die();
         add_submenu_page('edit.php?post_type=flipbook', 
@@ -93,10 +93,10 @@ function my_admin_menu() {
         'Settings', 
         8, 
         'settings-page', 
-        'settings_show');
+        'fpdf_settings_show');
 }
 
-function settings_show(){
+function fpdf_settings_show(){
     // Get all output for settings page
     require('settings.php');
 }

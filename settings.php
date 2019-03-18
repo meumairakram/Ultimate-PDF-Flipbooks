@@ -1,7 +1,7 @@
 <div id="poststuff" class="flip-container" >
     <div id="postbox-container-2" class="postbox-container rt-tab-container">
         <h2 class="heading">
-            <span>Short Code Generator</span>
+            <span>FlipPDF | Shortcode Generator</span>
         </h2>
 
         <div class="postbox rt-after-title" style="margin-bottom: 0;">
@@ -30,8 +30,7 @@
                             if( $query->have_posts() ): $query->the_posts(); 
                                 while ( $query->have_posts() ) : $query->the_post(); ?>
                                 <option value="<?php echo get_the_id();?>">
-                                    <?php //get_the_ID();?>
-                                    <?php the_title();?>
+                                    <?php sanitize_text_field(the_title());?>
                                 </option>
                                 <?php endwhile; wp_reset_postdata(); ?>
                             <?php endif; ?>
