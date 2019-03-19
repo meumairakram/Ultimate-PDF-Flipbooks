@@ -1,6 +1,14 @@
-# flipPDF
-A Free Wordpress Plugin for adding amazing Flipbooks in your Wordpress Posts and Pages.
+# Ultimate PDF Flipbooks | Flip Books Made Easy! 
 
-flipPDF is a project backend by two Wordpress developers, and It is aimed to provide amazing visualizations to the PDF Documents which you want to attach or add on your Page/Posts or Custom post types. flipPDF removes all the hassle for you and do the tricky job for you...
+Create beautiful and Responsive Flipbooks from your PDF's with page turn animations and many options and directly Embed them into your post and pages using our powerful shortcode generator.
 
-** Coming soon **
+Ultimate PDF Flipbooks is aimed to provide amazing visualizations to the PDF Documents which you want to attach or add on your Page/Posts or Custom post types. Ultimate PDF Flipbooks removes all the hassle for you and do the tricky job for you...
+
+## Features
+
+
+
+## Usage Instructions
+
+
+
