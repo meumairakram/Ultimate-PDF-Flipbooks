@@ -1,14 +1,16 @@
 <?php
+
 /****
-* Plugin Name:  FlipPDF | Ultimate Flip Books Made Easy! 
-* Plugin URI:   #
-* Description:  WP E-Books Representation Plugin developed with the Co-Work of Umair Akram & Hasnain Khalid  
-* Version:      1.0
-* Author:       Umair Akram & M Hasnain Khalid
+* Plugin Name:  Ultimate PDF Flipbooks | Flip Books Made Easy! 
+* Plugin URI:   https://github.com/meumairakram/flipPDF
+* Description:  Create beautiful and Responsive Flipbooks from your PDF's with page turn animations and many options and directly Embed them into your post and pages using our powerful shortcode generator.
+* Version:      1.1
+* Author:       Umair Akram & Hasnain Khalid
 * Author URI:   #
 * License:      GPL 2
 ****/
-//define(MH_PATH, plugins_url());
+
+
  define('UPLOAD_FOLDER_NAME','flipbooks');
  define('FPDF_UPLOAD_PATH',wp_upload_dir()['basedir'].'/'.UPLOAD_FOLDER_NAME);
 
@@ -87,7 +89,6 @@ add_action('init','fpdf_register_post_type');
 add_action('admin_menu', 'fpdf_my_admin_menu'); 
 function fpdf_my_admin_menu() {  
 
-    // var_dump(plugin_dir_path(__FILE__)); die();
         add_submenu_page('edit.php?post_type=flipbook', 
         'Settings', 
         'Settings', 
@@ -106,6 +107,7 @@ function fpdf_new_book_cover_meta() {
 	    add_meta_box('postimagediv', __('Book Cover Image'), 'post_thumbnail_meta_box', 'flipbook', 'side', 'low');
 }
 add_action('admin_head','fpdf_new_book_cover_meta');
+
 /// Adding custom PDF book attachment with post feature
 function fpdf_add_custom_meta_boxes() {  
     add_meta_box('wp_custom_attachment', 'Upload Book (PDF)', 'fpdf_wp_custom_attachment', 'flipbook', 'side', 'low');  
@@ -131,31 +133,6 @@ function fpdf_wp_custom_attachment() {
 
 
 
-//saving uploaded files Ghost code
-
-// add_action('save_post_flipbook', 'fpdf_save_custom_meta_data');
-// function fpdf_save_custom_meta_data($id) {
-//     if(!empty($_FILES['wp_custom_attachment']['name'])) {
-//         $supported_types = array('application/pdf');
-//         $arr_file_type = wp_check_filetype(basename($_FILES['wp_custom_attachment']['name']));
-//         $uploaded_type = $arr_file_type['type'];
-//         if(in_array($uploaded_type, $supported_types)) {
-//             $upload = wp_upload_bits($_FILES['wp_custom_attachment']['name'], null, file_get_contents($_FILES['wp_custom_attachment']['tmp_name']));
-//             if(isset($upload['error']) && $upload['error'] != 0) {
-//                 wp_die('There was an error uploading your file. The error is: ' . $upload['error']);
-//             } else {
-//                 update_post_meta($id, 'fpdf_book_attachment', $upload);
-//             }
-//         }
-//         else {
-//             wp_die("The file type that you've uploaded is not a PDF.");
-//         }
-//     }
-// }
-
-
-
-
 function fpdf_update_edit_form() {
     echo ' enctype="multipart/form-data"';
 }
@@ -168,11 +145,12 @@ if( !function_exists('fpdf_custom_books_template') ):
         $single_template = plugin_dir_path(__FILE__) . 'fpdf_template.php';
     }//end if MY_CUSTOM_POST_TYPE
     return $single_template;
-}//end get_MY_CUSTOM_POST_TYPE_template function
+}
+//end get_MY_CUSTOM_POST_TYPE_template function
+
 endif;
  
 add_filter( 'single_template', 'fpdf_custom_books_template' ) ;
-// Read more at https://www.adviceinteractivegroup.com/blog/using-wordpress-custom-post-type-templates-in-a-plugin/#dTlVjE9vQpyEUKul.99 
 
 
 function fpdf_save_pdf_books($post_id) {
