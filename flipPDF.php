@@ -28,7 +28,7 @@ register_activation_hook(__FILE__,'upfb_check_uploading_directory');
 function upfb_enqueue_styles() {
     wp_enqueue_style( 'flippdf_css', plugins_url().'/flipPDF/includes/css/upfb_style.min.css');
     wp_enqueue_style( 'maglone_font', 'https://fonts.googleapis.com/icon?family=Material+Icons');
-    wp_enqueue_script('flippdf_js', plugins_url().'/flipPDF/includes/js/upfb_render.min.js');
+    wp_enqueue_script('flippdf_js', plugins_url().'/flipPDF/includes/js/magalone.min.js');
 }
 function upfb_admin_enqueue_styles() {
     wp_enqueue_style( 'custom_css', plugins_url() . '/flipPDF/includes/css/custom_style.css');
