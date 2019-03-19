@@ -11,7 +11,7 @@
                     </p> -->
 
                     <p id="allshortcode" class="shortcode" onclick="selectText('allshortcode')" >
-                        [fpdf_ebook book_id="<span id="pdfId" >XXX</span>" allow-download="<span id="allow_download" >false</span>" thumbnails="<span id="thumbnailsid" >false</span>" classes="<span id="classesid"></span>" slideshow="<span id="slideid">yes</span>"   allow-fullscreen="<span id="flippingid">yes</span>" page-layout="<span id="page_layoutid">auto</span>" width="<span id="cont_widthid">100%</span>" height="<span id="cont_heightid">500px</span>"]
+                        [upfb_ebook book_id="<span id="pdfId" >XXX</span>" allow-download="<span id="allow_download" >false</span>" thumbnails="<span id="thumbnailsid" >false</span>" classes="<span id="classesid"></span>" slideshow="<span id="slideid">yes</span>"   allow-fullscreen="<span id="flippingid">yes</span>" page-layout="<span id="page_layoutid">auto</span>" width="<span id="cont_widthid">100%</span>" height="<span id="cont_heightid">500px</span>"]
                     </p>
 
                 </div>
