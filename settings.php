@@ -1,7 +1,7 @@
 <div id="poststuff" class="flip-container" >
     <div id="postbox-container-2" class="postbox-container rt-tab-container">
         <h2 class="heading">
-            <span>FlipPDF | Shortcode Generator</span>
+            <span>Ultimate PDF Flipbooks | Shortcode Generator</span>
         </h2>
 
         <div class="postbox rt-after-title" style="margin-bottom: 0;">
