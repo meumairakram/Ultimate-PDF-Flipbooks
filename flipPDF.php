@@ -2,7 +2,7 @@
 
 /****
 * Plugin Name:  Ultimate PDF Flipbooks | Flip Books Made Easy! 
-* Plugin URI:   https://github.com/meumairakram/flipPDF
+* Plugin URI:   https://github.com/meumairakram/Ultimate-PDF-Flipbooks
 * Description:  Create beautiful and Responsive Flipbooks from your PDF's with page turn animations and many options and directly Embed them into your post and pages using our powerful shortcode generator.
 * Version:      1.1
 * Author:       Umair Akram & Hasnain Khalid
