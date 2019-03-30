@@ -92,14 +92,14 @@ add_action('admin_menu', 'upfb_my_admin_menu');
 function upfb_my_admin_menu() {  
 
         add_submenu_page('edit.php?post_type=flipbook', 
-        'Settings', 
-        'Settings', 
+        'Shortcode Generator', 
+        'Shortcode Generator', 
         8, 
-        'settings-page', 
-        'upfb_settings_show');
+        'shortcode-page', 
+        'upfb_shortcode_generator');
 }
 
-function upfb_settings_show(){
+function upfb_shortcode_generator(){
     // Get all output for settings page
     require('settings.php');
 }
