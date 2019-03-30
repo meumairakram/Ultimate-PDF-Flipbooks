@@ -129,7 +129,7 @@ function upfb_wp_custom_attachment() {
     $html .= '<p class="description">';
     $html .= 'Upload your PDF Book here.';
     $html .= '</p>';
-    $html .= '<input type="file" id="upfb_book_attachment" name="upfb_book_attachment" value="" size="25">';
+    $html .= '<input type="file" id="upfb_book_attachment" accept="application/pdf" name="upfb_book_attachment" value="" size="25">';
     echo $html;
 }
 
