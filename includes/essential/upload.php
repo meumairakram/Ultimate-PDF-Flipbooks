@@ -1,7 +1,7 @@
 <?php
 
 
-function MoveFile($file, $target, $type)
+function upfb_MoveFile($file, $target, $type)
 {
     $path_dir = dirname($target);
     if(!file_exists($path_dir))
@@ -42,19 +42,19 @@ function MoveFile($file, $target, $type)
     return false;
 }
 
-function EndsWith($needle, $haystack)
+function upfb_EndsWith($needle, $haystack)
 {
     return $needle === "" || substr($haystack, -strlen($needle)) === $needle;
 }
 
-function FindPdf()
+function upfb_FindPdf()
 {
     $folder = __DIR__;
     $files = scandir($folder);
     for($i = 0; $i < count($files); $i++)
     {
         $filename_lower = strtolower($files[$i]);
-        if(EndsWith(".pdf", $filename_lower))
+        if(upfb_EndsWith(".pdf", $filename_lower))
         {
             return $files[$i];
         }
@@ -71,7 +71,7 @@ switch($cmd)
         break;
 
     case "prepare":
-        $pdfFile = FindPdf();
+        $pdfFile = upfb_FindPdf();
         if($pdfFile === null)
         {
             echo "nopdf";
@@ -81,7 +81,7 @@ switch($cmd)
             $source_path_bits = [__DIR__, $pdfFile];
             $target_path_bits = [__DIR__, "full.pdf"];
 
-            echo MoveFile(implode(DIRECTORY_SEPARATOR, $source_path_bits), implode(DIRECTORY_SEPARATOR, $target_path_bits), "move") == true ? "ok" : "fail";            
+            echo upfb_MoveFile(implode(DIRECTORY_SEPARATOR, $source_path_bits), implode(DIRECTORY_SEPARATOR, $target_path_bits), "move") == true ? "ok" : "fail";            
         }
         break;
 
@@ -89,7 +89,7 @@ switch($cmd)
         $source_path_bits = [__DIR__, "full.pdf"];
         $target_path_bits = [__DIR__, "pdf", "full.pdf"];
 
-        echo MoveFile(implode(DIRECTORY_SEPARATOR, $source_path_bits), implode(DIRECTORY_SEPARATOR, $target_path_bits), "move") == true ? "ok" : "fail";
+        echo upfb_MoveFile(implode(DIRECTORY_SEPARATOR, $source_path_bits), implode(DIRECTORY_SEPARATOR, $target_path_bits), "move") == true ? "ok" : "fail";
         unlink(__FILE__);
         break;
 
@@ -167,7 +167,7 @@ switch($cmd)
                 if(count($target_path_bits) > 1)
                 {
                     $target_path = implode(DIRECTORY_SEPARATOR, $target_path_bits);
-                    $success = MoveFile($FILE, $target_path, $_POST["transfer"]);
+                    $success = upfb_MoveFile($FILE, $target_path, $_POST["transfer"]);
                     if($success == false)
                         echo "upload_error ON " . $target_path;
                     else
