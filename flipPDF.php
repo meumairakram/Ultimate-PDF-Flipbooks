@@ -173,20 +173,16 @@ function upfb_save_pdf_books($post_id) {
 
         // changing file name to match our naming convention
 
-        //$_FILES['upfb_book_attachment']['name'] = 'flip_book_'.$post_id;
-
 
         $upload_dir = wp_upload_dir();
 
         $upload_dir = $upload_dir['basedir'];
-
-        // var_dump($upload_dir); die();
     
         // Uploading Files 
 
         $errors= array();
         $folder_name = 'flipbook_'.$post_id;  // stores books in different folders based on post id
-        $file_name = 'pdf_book';
+        $file_name = sanitize_file_name('pdf_book');
         $file_size =$_FILES['upfb_book_attachment']['size'];
         $file_tmp =$_FILES['upfb_book_attachment']['tmp_name'];
         $file_type=$_FILES['upfb_book_attachment']['type'];
@@ -195,7 +191,7 @@ function upfb_save_pdf_books($post_id) {
         $extensions= array("pdf");
         
         if(in_array($file_ext,$extensions)=== false){
-           $errors[]="extension not allowed, please choose a PDF File Format.";
+           $errors[]="This extension not allowed, please choose a PDF File Format.";
         }
         
         if($file_size > 52428800){
@@ -222,15 +218,12 @@ function upfb_save_pdf_books($post_id) {
 
 
                 move_uploaded_file($file_tmp,UPFB_UPLOAD_PATH.'/'.$folder_name."/".$file_name.'.'.$file_ext);
-                //var_dump($file_name.'.'.$file_ext);
                  //reading the sample file
                 $rendering_script = file_get_contents(plugin_dir_path(__FILE__).'/includes/essential/upload.php');
                  // placing the file in the same directory
                 $place_script = file_put_contents(UPFB_UPLOAD_PATH.'/'.$folder_name.'/upload.php',$rendering_script);
                 
-                update_post_meta($post_id,'upfb_book_foldername',$folder_name);
-
-                // echo "Success"; exit;
+                update_post_meta($post_id,'upfb_book_foldername',$folder_name);            
 
             } else {
                 // if the folder donot exists then create the folder first
@@ -285,15 +278,6 @@ function upfb_create_shortcode($atts) {
 }
 
 add_shortcode('upfb_ebook','upfb_create_shortcode');
-
-
-
-
-
-
-
-
-
 
 
 // admin level notices 
